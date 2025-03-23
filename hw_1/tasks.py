@@ -31,3 +31,20 @@ def fibonacci(num:int) -> list:
             new_num = fib_lst[i-1] + fib_lst[i]
             fib_lst.append(new_num)
     return fib_lst
+
+# Task 3
+def count_ones(num):
+
+    if not isinstance(num, int): raise TypeError("Число должно быть целым")
+
+    if num < 0: raise ValueError("Число должно быть больше 0")
+
+    result = '0'
+
+    if num != 0:
+        result = ""
+        while num > 0:
+            result += str(num % 2)
+            num = num // 2
+
+    return result[::-1]
