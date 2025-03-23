@@ -46,5 +46,16 @@ def count_ones(num):
         while num > 0:
             result += str(num % 2)
             num = num // 2
-
     return result[::-1]
+
+# Task 4
+def polindrome(num: int):
+
+    if not isinstance(num, int): raise TypeError("Число должно быть целым")
+    temp = 0
+    temp_num = num
+
+    while temp_num > 0:
+        temp = temp * 10 + temp_num % 10
+        temp_num = temp_num // 10
+    return temp == num
