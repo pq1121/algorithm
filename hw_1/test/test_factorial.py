@@ -1,4 +1,4 @@
-from task1 import factorial
+from tasks import factorial
 import pytest
 
 @pytest.mark.parametrize("num, expected",
@@ -27,6 +27,6 @@ def test_factorial_negative(num, expected):
                              (0,1),
                              (1,1)
                          ])
-def test_factorial_negative(num, expected):
+def test_factorial_bound(num, expected):
 
     assert factorial(num) == expected
