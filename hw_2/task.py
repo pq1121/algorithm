@@ -42,3 +42,24 @@ def rotate_and_reverse(arr: list, k: int):
             result_arr.append(arr[i])
 
     return result_arr[::-1]
+
+# Task 3
+def  reverse_even_elements(arr: list[int]):
+
+    if not isinstance(arr, list): raise TypeError()
+
+    n = len(arr)
+    index_temp_arr = []
+    temp_arr = []
+
+    for i in range(n):
+
+        if arr[i] % 2 == 0:
+            index_temp_arr.append(i)
+            temp_arr.append(arr[i])
+    temp_arr.reverse()
+
+    for i in range(len(index_temp_arr)):
+        arr[index_temp_arr[i]] = temp_arr[i]
+
+    return arr
