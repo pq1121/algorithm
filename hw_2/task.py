@@ -63,3 +63,27 @@ def  reverse_even_elements(arr: list[int]):
         arr[index_temp_arr[i]] = temp_arr[i]
 
     return arr
+
+# Task 4
+def inc_number(digits:list):
+
+    if not isinstance(digits, list): raise TypeError
+    temp_num = ''
+
+    for digit in digits:
+
+        if not isinstance(digit, int): raise TypeError()
+
+        elif digit > 9 or digit <= 0: raise ValueError()
+
+        else:
+            temp_num += str(digit)
+    temp_num = str(int(temp_num) + 1)
+
+    if temp_num:
+        digits.clear()
+
+    for i in range(len(temp_num)):
+        digits.append(int(temp_num[i]))
+
+    return digits
