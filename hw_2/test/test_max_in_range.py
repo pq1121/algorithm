@@ -7,7 +7,7 @@ import pytest
                              ([5,6,7,8,9,10], 2, 4, (9, 4, 2)),
                              ([0,5,10,15,20,25], 0, 4, (20, 4, 4))
                          ])
-def test_max_in_range(array, start, end, expected):
+def test_max_in_range_positive(array, start, end, expected):
 
     assert max_in_range(array, start, end) == expected
 
@@ -18,7 +18,7 @@ def test_max_in_range(array, start, end, expected):
                              ([5,6,7,8,9,10], -1, 4, ValueError),
                              ([0,5,10,15,20,25], 0, 10, ValueError)
                          ])
-def test_max_in_range(array, start, end, expected):
+def test_max_in_range_negative(array, start, end, expected):
     with pytest.raises(expected):
         max_in_range(array, start, end)
 
@@ -28,6 +28,6 @@ def test_max_in_range(array, start, end, expected):
                              ([0,2,3,4,5], 0, 0, (0, 0, 0)),
                              ([0,2,3,4,5], 1, 1, (2, 1, 0))
                          ])
-def test_max_in_range(array, start, end, expected):
+def test_max_in_range_bound(array, start, end, expected):
 
     assert max_in_range(array, start, end) == expected
