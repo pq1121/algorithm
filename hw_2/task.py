@@ -93,7 +93,6 @@ def three_sum_unique(arr: list):
 
     if not isinstance(arr, list): raise TypeError
     temp_arr = []
-    result_unique_arr = []
     n = len(arr)
 
     if n < 3: raise ValueError()
@@ -105,15 +104,9 @@ def three_sum_unique(arr: list):
             for k in range(j+1, n):
 
                 if arr[i] + arr[j] + arr[k] == 0:
-                    temp_arr.append([arr[i], arr[j], arr[k]])
+                    lst = [arr[i], arr[j], arr[k]]
+                    if lst not in temp_arr:
+                        temp_arr.append(lst)
 
     if temp_arr:
-
-        for lst in temp_arr:
-
-            if lst in result_unique_arr:
-                continue
-            else:
-                result_unique_arr.append(lst)
-
-        return result_unique_arr
+        return temp_arr
