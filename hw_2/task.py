@@ -87,3 +87,33 @@ def inc_number(digits:list):
         digits.append(int(temp_num[i]))
 
     return digits
+
+# Task 7
+def three_sum_unique(arr: list):
+
+    if not isinstance(arr, list): raise TypeError
+    temp_arr = []
+    result_unique_arr = []
+    n = len(arr)
+
+    if n < 3: raise ValueError()
+
+    for i in range(n):
+
+        for j in range(i+1, n):
+
+            for k in range(j+1, n):
+
+                if arr[i] + arr[j] + arr[k] == 0:
+                    temp_arr.append([arr[i], arr[j], arr[k]])
+
+    if temp_arr:
+
+        for lst in temp_arr:
+
+            if lst in result_unique_arr:
+                continue
+            else:
+                result_unique_arr.append(lst)
+
+        return result_unique_arr
