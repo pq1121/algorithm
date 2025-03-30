@@ -67,24 +67,25 @@ def  reverse_even_elements(arr: list[int]):
 # Task 4
 def inc_number(digits:list):
 
+    inc = 0
+    n = len(digits)
+
     if not isinstance(digits, list): raise TypeError
-    temp_num = ''
 
-    for digit in digits:
+    for i in range(-1, -n-1, -1):
 
-        if not isinstance(digit, int): raise TypeError()
+        if not isinstance(digits[i], int): raise TypeError()
 
-        elif digit > 9 or digit <= 0: raise ValueError()
+        elif digits[i] > 9 or digits[i] <= 0: raise ValueError()
 
-        else:
-            temp_num += str(digit)
-    temp_num = str(int(temp_num) + 1)
-
-    if temp_num:
-        digits.clear()
-
-    for i in range(len(temp_num)):
-        digits.append(int(temp_num[i]))
+        elif inc == 0:
+            digits[i] += 1
+            inc = 1
+            if digits[i] > 9:
+                digits[i] = 0
+                inc = 0
+            if i == -n:
+                digits.insert(0,1)
 
     return digits
 
