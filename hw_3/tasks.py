@@ -99,4 +99,4 @@ class List:
         self.insert(0, value)
 
     def __str__(self):
-        return f"{self.__memory}\nколичество: {self.__count}"
+        return f"{self.__memory[:self.__count]}"
